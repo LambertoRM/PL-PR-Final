@@ -1,3 +1,4 @@
+//Errores semánticos
 void errorSemantico(int nerror,int nlin,int ncol,const char *s)
 {
    fprintf(stderr,"Error semantico (%d,%d): ", nlin,ncol);
@@ -34,6 +35,7 @@ void errorSemantico(int nerror,int nlin,int ncol,const char *s)
    exit(-1);
 }
 
+//Errores léxicos y sintácticos
 void msgError(int nerror,int nlin,int ncol,const char *s)
 {
     switch (nerror) {
