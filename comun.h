@@ -1,6 +1,4 @@
 /*----------------------- comun.h -----------------------------*/
-#include <string.h>
-
 /* fichero con definciones comunes para los ficheros .l y .y */
 typedef struct {
    char *lexema;

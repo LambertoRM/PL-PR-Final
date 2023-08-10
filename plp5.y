@@ -1,3 +1,43 @@
+%token algoritmo dospto id falgoritmo
+%token var fvar pyc coma entero real logico
+%token tabla nentero de escribe lee si entonces
+%token sino mientras hacer repetir hasta opasig
+%token blq fblq obool ybool oprel opas opmd
+%token nreal pari pard nobool cierto falso cori cord
+
+%{
+
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+#include <iostream>
+
+
+using namespace std;
+
+#include "comun.h"
+#include "TablaTipos.h"
+
+// variables y funciones del A. Léxico
+extern int ncol,nlin,findefichero;
+
+
+extern int yylex();
+extern char *yytext;
+extern FILE *yyin;
+
+
+int yyerror(char *s);
+
+
+const int ENTERO = 1;
+const int REAL = 2;
+
+string operador, s1, s2;  // string auxiliares
+
+%}
+
 //Errores semánticos
 void errorSemantico(int nerror,int nlin,int ncol,const char *s)
 {
